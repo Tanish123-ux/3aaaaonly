@@ -4,28 +4,37 @@
 
 <form onsubmit="return validate()">
   Name: <input type="text" id="name"><br><br>
+  Age: <input type="number" id="age"><br><br>
+  Mobile: <input type="text" id="mobile"><br><br>
   Email: <input type="text" id="email"><br><br>
-  Age: <input type="text" id="number"><br><br>
+
   <button type="submit">Submit</button>
 </form>
 
 <script>
   function validate() {
     let name = document.getElementById("name").value;
+    let age = document.getElementById("age").value;
+    let mobile = document.getElementById("mobile").value;
     let email = document.getElementById("email").value;
-    let number = document.getElementById("number").value;
 
     if (name === "") {
       alert("Name is required");
       return false;
     }
 
-    if (!email.includes("@")) {
-      alert("Enter valid email");
+    if (age <= 0) {
+      alert("Enter valid age");
       return false;
     }
-if (!number.includes(=== "")) {
-      alert("Enter valid number");
+
+    if (mobile.length !== 10 || isNaN(mobile)) {
+      alert("Enter valid 10-digit mobile number");
+      return false;
+    }
+
+    if (!email.includes("@")) {
+      alert("Enter valid email");
       return false;
     }
 
