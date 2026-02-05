@@ -13,6 +13,7 @@
   function validate() {
     let name = document.getElementById("name").value;
     let email = document.getElementById("email").value;
+    let number = document.getElementById("number").value;
 
     if (name === "") {
       alert("Name is required");
@@ -21,6 +22,10 @@
 
     if (!email.includes("@")) {
       alert("Enter valid email");
+      return false;
+    }
+if (!number.includes(=== "")) {
+      alert("Enter valid number");
       return false;
     }
 
